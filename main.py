@@ -23,8 +23,7 @@ while make_drink:
         requested = menu.find_drink(choice)
         go = coffeeMachine.is_resource_sufficient(requested)
         if go:
-            inserted_money = 0.00
-            money_ok = money_machine.make_payment(inserted_money)
+            money_ok = money_machine.make_payment(requested.cost)
             if money_ok:
                 coffeeMachine.make_coffee(requested)
             else:
